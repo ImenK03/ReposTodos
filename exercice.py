@@ -13,7 +13,6 @@ def lister_todos():
         print("\nListe des tâches :")
         for i, todo in enumerate(todos, start=1):
             print(f"{i}. {todo['description']} - {'Fait' if todo['statut'] else 'À faire'}")
-
 def creer_todo():
     """Créer une nouvelle tâche."""
     description = input("Entrez la description de la tâche : ")
@@ -23,6 +22,7 @@ def creer_todo():
 def modifier_statut_todo():
     """Modifier le statut d'une tâche."""
     lister_todos()
+    
     try:
         index = int(input("Entrez le numéro de la tâche à modifier : ")) - 1
         if 0 <= index < len(todos):
